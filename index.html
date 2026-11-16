@@ -1,0 +1,1025 @@
+html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramprasath weds Bharathi | Wedding Invitation</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cinzel, Great Vibes, Cormorant Garamond -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: {
+                            800: '#6B141A',
+                            900: '#4A080C',
+                            950: '#2E0306',
+                        },
+                        gold: {
+                            300: '#F5E0A3',
+                            400: '#E5C158',
+                            500: '#D4AF37',
+                            600: '#AA8220',
+                            700: '#7D5C10',
+                        },
+                        emerald: {
+                            800: '#064E3B',
+                            900: '#022C22',
+                        },
+                        ivory: {
+                            50: '#FDFBF7',
+                            100: '#F9F3E6',
+                            200: '#F1E3C6',
+                        }
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        script: ['Great Vibes', 'cursive'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    },
+                    animation: {
+                        'spin-slow': 'spin 45s linear infinite',
+                        'spin-reverse-slow': 'spinReverse 55s linear infinite',
+                        'sway': 'sway 4s ease-in-out infinite',
+                        'sway-delayed': 'sway 4.5s ease-in-out 1s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-gold': 'pulseGold 3s infinite',
+                        'shimmer': 'shimmer 3s linear infinite',
+                    },
+                    keyframes: {
+                        spinReverse: {
+                            '0%': { transform: 'rotate(360deg)' },
+                            '100%': { transform: 'rotate(0deg)' },
+                        },
+                        sway: {
+                            '0%, 100%': { transform: 'rotate(-4deg)' },
+                            '50%': { transform: 'rotate(4deg)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseGold: {
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(212, 175, 55, 0.3)' },
+                            '50%': { boxShadow: '0 0 30px rgba(212, 175, 55, 0.75)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% center' },
+                            '100%': { backgroundPosition: '200% center' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Kanjeevaram Silk & Mandala Textures */
+        body {
+            background-color: #2E0306;
+            color: #F9F3E6;
+            overflow-x: hidden;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .silk-pattern {
+            background-color: #4A080C;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 60%),
+                repeating-linear-gradient(45deg, rgba(212, 175, 55, 0.03) 0px, rgba(212, 175, 55, 0.03) 2px, transparent 2px, transparent 10px),
+                repeating-linear-gradient(-45deg, rgba(6, 78, 59, 0.06) 0px, rgba(6, 78, 59, 0.06) 2px, transparent 2px, transparent 10px);
+        }
+
+        .ivory-silk-card {
+            background: linear-gradient(145deg, #FDFBF7 0%, #F6EBD4 100%);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 0 2px #D4AF37, inset 0 0 0 6px #FDFBF7, inset 0 0 0 7px rgba(212, 175, 55, 0.5);
+        }
+
+        .gold-foil-text {
+            background: linear-gradient(90deg, #AA8220 0%, #F5E0A3 25%, #D4AF37 50%, #F5E0A3 75%, #AA8220 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 4s linear infinite;
+        }
+
+        .gold-border-ornate {
+            border: 1.5px solid rgba(212, 175, 55, 0.6);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15), inset 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+
+        /* Temple Doors Intro Overlay */
+        #temple-doors-overlay {
+            perspective: 1500px;
+            transition: opacity 1.2s ease-in-out, visibility 1.2s;
+        }
+
+        .door-panel {
+            transition: transform 1.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+        }
+
+        .door-left {
+            transform-origin: left center;
+            background: radial-gradient(circle at right center, #6B141A 0%, #3A0509 100%);
+            border-right: 3px solid #D4AF37;
+        }
+
+        .door-right {
+            transform-origin: right center;
+            background: radial-gradient(circle at left center, #6B141A 0%, #3A0509 100%);
+            border-left: 3px solid #D4AF37;
+        }
+
+        .doors-open .door-left {
+            transform: rotateY(-105deg);
+        }
+
+        .doors-open .door-right {
+            transform: rotateY(105deg);
+        }
+
+        .doors-open #door-center-seal {
+            opacity: 0;
+            transform: scale(1.4);
+            pointer-events: none;
+        }
+
+        /* Scroll Reveal Animations */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 3D Tilt Card Effect */
+        .tilt-card {
+            transition: transform 0.2s ease-out, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+        }
+
+        /* Temple Bell Origin */
+        .bell-swing {
+            transform-origin: top center;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2E0306;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #AA8220, #D4AF37);
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="silk-pattern min-h-screen relative selection:bg-gold-500 selection:text-maroon-950">
+
+    <!-- Particle Canvas for Floating Jasmine, Marigold Petals & Gold Sparkles -->
+    <canvas id="petals-canvas" class="fixed inset-0 pointer-events-none z-40"></canvas>
+
+    <!-- ===================================================================== -->
+    <!-- 1. OPENING TEMPLE DOORS INTRO OVERLAY                                  -->
+    <!-- ===================================================================== -->
+    <div id="temple-doors-overlay" class="fixed inset-0 z-50 flex overflow-hidden">
+        <!-- Left Temple Door -->
+        <div class="door-panel door-left w-1/2 h-full relative flex items-center justify-end shadow-2xl">
+            <!-- Intricate Gold Door Frame & Panels -->
+            <div class="w-full h-full border-8 border-double border-gold-500/40 p-3 sm:p-6 flex flex-col justify-between relative overflow-hidden">
+                <!-- Decorative Corner Motifs -->
+                <div class="w-16 h-16 border-t-2 border-l-2 border-gold-400/70 rounded-tl-xl"></div>
+                <!-- Half Mandala on Left Door -->
+                <svg class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-64 h-64 sm:w-96 sm:h-96 text-gold-500/20" viewBox="0 0 200 200" fill="none">
+                    <circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4"/>
+                    <circle cx="100" cy="100" r="70" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="100" cy="100" r="50" stroke="currentColor" stroke-width="1"/>
+                    <path d="M100 10 L110 40 L100 70 L90 40 Z M100 190 L110 160 L100 130 L90 160 Z M10 100 L40 90 L70 100 L40 110 Z M190 100 L160 90 L130 100 L160 110 Z" fill="currentColor"/>
+                </svg>
+                <!-- Brass Door Studs -->
+                <div class="grid grid-cols-3 gap-4 opacity-40 my-auto px-4">
+                    <div class="w-3 h-3 rounded-full bg-gold-400 shadow"></div>
+                    <div class="w-3 h-3 rounded-full bg-gold-400 shadow"></div>
+                    <div class="w-3 h-3 rounded-full bg-gold-400 shadow"></div>
+                </div>
+                <div class="w-16 h-16 border-b-2 border-l-2 border-gold-400/70 rounded-bl-xl"></div>
+            </div>
+        </div>
+
+        <!-- Right Temple Door -->
+        <div class="door-panel door-right w-1/2 h-full relative flex items-center justify-start shadow-2xl">
+            <div class="w-full h-full border-8 border-double border-gold-500/40 p-3 sm:p-6 flex flex-col justify-between items-end relative overflow-hidden">
+                <div class="w-16 h-16 border-t-2 border-r-2 border-gold-400/70 rounded-tr-xl"></div>
+                <!-- Half Mandala on Right Door -->
+                <svg class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-64 h-64 sm:w-96 sm:h-96 text-gold-500/20" viewBox="0 0 200 200" fill="none">
+                    <circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4"/>
+                    <circle cx="100" cy="100" r="70" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="100" cy="100" r="50" stroke="currentColor" stroke-width="1"/>
+                    <path d="M100 10 L110 40 L100 70 L90 40 Z M100 190 L110 160 L100 130 L90 160 Z M10 100 L40 90 L70 100 L40 110 Z M190 100 L160 90 L130 100 L160 110 Z" fill="currentColor"/>
+                </svg>
+                <div class="grid grid-cols-3 gap-4 opacity-40 my-auto px-4">
+                    <div class="w-3 h-3 rounded-full bg-gold-400 shadow"></div>
+                    <div class="w-3 h-3 rounded-full bg-gold-400 shadow"></div>
+                    <div class="w-3 h-3 rounded-full bg-gold-400 shadow"></div>
+                </div>
+                <div class="w-16 h-16 border-b-2 border-r-2 border-gold-400/70 rounded-br-xl"></div>
+            </div>
+        </div>
+
+        <!-- Center Royal Seal & Tap to Open Button -->
+        <div id="door-center-seal" class="absolute inset-0 flex flex-col items-center justify-center z-10 px-4 transition-all duration-700">
+            <div class="bg-maroon-950/90 backdrop-blur-md border-2 border-gold-500 rounded-full p-8 sm:p-10 shadow-[0_0_60px_rgba(212,175,55,0.45)] flex flex-col items-center text-center max-w-xs sm:max-w-sm animate-pulse-gold">
+                <!-- Auspicious Pillayar Suzhi / Lotus Emblem -->
+                <svg class="w-12 h-12 text-gold-400 mb-3" viewBox="0 0 64 64" fill="none">
+                    <path d="M32 8C32 8 40 20 40 30C40 36 36 40 32 40C28 40 24 36 24 30C24 20 32 8 32 8Z" fill="currentColor" fill-opacity="0.8"/>
+                    <path d="M32 40C32 40 46 36 52 26C52 26 52 40 40 46C35 48 32 40 32 40Z" fill="currentColor" fill-opacity="0.6"/>
+                    <path d="M32 40C32 40 18 36 12 26C12 26 12 40 24 46C29 48 32 40 32 40Z" fill="currentColor" fill-opacity="0.6"/>
+                    <path d="M16 50C22 54 42 54 48 50" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+
+                <p class="font-cinzel text-xs tracking-[0.25em] text-gold-300 uppercase mb-1">Shubh Vivah</p>
+                <h2 class="font-script text-4xl sm:text-5xl text-gold-400 mb-2">R &amp; B</h2>
+                <p class="font-serif italic text-ivory-200 text-base sm:text-lg mb-6">Ramprasath &amp; Bharathi</p>
+
+                <button id="open-invite-btn" class="group relative inline-flex items-center justify-center px-7 py-3.5 font-cinzel text-xs sm:text-sm font-bold tracking-[0.2em] text-maroon-950 uppercase bg-gradient-to-r from-gold-400 via-gold-300 to-gold-500 rounded-full shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer">
+                    <span>Tap to Open Invitation</span>
+                    <i data-lucide="sparkles" class="w-4 h-4 ml-2 text-maroon-900 group-hover:rotate-12 transition-transform"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- 2. TOP TRADITIONAL TORAN (MANGO LEAVES, MARIGOLD & SWAYING BELLS)      -->
+    <!-- ===================================================================== -->
+    <header class="relative w-full overflow-hidden pt-0 z-20">
+        <!-- Decorative Top Gold & Emerald Temple Border -->
+        <div class="h-3 w-full bg-gradient-to-r from-emerald-900 via-gold-500 to-emerald-900 border-b border-gold-300/60"></div>
+        
+        <!-- SVG Festoon / Toran Garland Banner -->
+        <div class="w-full max-w-6xl mx-auto px-2 flex justify-between items-start pointer-events-none -mt-1">
+            <!-- Left Hanging Temple Bell -->
+            <div class="bell-swing animate-sway flex flex-col items-center ml-2 sm:ml-8">
+                <div class="w-0.5 h-8 sm:h-12 bg-gradient-to-b from-gold-300 to-gold-600"></div>
+                <svg class="w-10 h-12 sm:w-14 sm:h-16 text-gold-400 drop-shadow-[0_6px_10px_rgba(0,0,0,0.6)]" viewBox="0 0 64 72" fill="none">
+                    <circle cx="32" cy="6" r="4" stroke="currentColor" stroke-width="2.5"/>
+                    <path d="M32 10C20 10 16 22 15 36C14 46 8 52 8 52H56C56 52 50 46 49 36C48 22 44 10 32 10Z" fill="url(#bellGrad)" stroke="#F5E0A3" stroke-width="1.5"/>
+                    <circle cx="32" cy="56" r="5" fill="#D4AF37"/>
+                    <defs>
+                        <linearGradient id="bellGrad" x1="8" y1="10" x2="56" y2="52" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#F5E0A3"/>
+                            <stop offset="0.5" stop-color="#D4AF37"/>
+                            <stop offset="1" stop-color="#7D5C10"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+
+            <!-- Center Marigold & Mango Leaf Toran SVG -->
+            <div class="flex-1 max-w-3xl overflow-hidden">
+                <svg class="w-full h-16 sm:h-24" viewBox="0 0 800 110" fill="none" preserveAspectRatio="none">
+                    <!-- Draped Garland Curves -->
+                    <path d="M0 5 Q 200 75 400 12 Q 600 75 800 5" stroke="#D4AF37" stroke-width="3" fill="none"/>
+                    <path d="M0 10 Q 200 85 400 18 Q 600 85 800 10" stroke="#064E3B" stroke-width="5" stroke-dasharray="12 6" fill="none"/>
+                    <!-- Mango Leaves along the curve -->
+                    <g fill="#0A6847" stroke="#D4AF37" stroke-width="1">
+                        <path d="M80 28 Q 70 55 80 72 Q 90 55 80 28 Z"/>
+                        <path d="M140 42 Q 130 70 140 88 Q 150 70 140 42 Z"/>
+                        <path d="M200 48 Q 190 78 200 96 Q 210 78 200 48 Z"/>
+                        <path d="M260 42 Q 250 70 260 88 Q 270 70 260 42 Z"/>
+                        <path d="M320 28 Q 310 55 320 72 Q 330 55 320 28 Z"/>
+                        
+                        <path d="M480 28 Q 470 55 480 72 Q 490 55 480 28 Z"/>
+                        <path d="M540 42 Q 530 70 540 88 Q 550 70 540 42 Z"/>
+                        <path d="M600 48 Q 590 78 600 96 Q 610 78 600 48 Z"/>
+                        <path d="M660 42 Q 650 70 660 88 Q 670 70 660 42 Z"/>
+                        <path d="M720 28 Q 710 55 720 72 Q 730 55 720 28 Z"/>
+                    </g>
+                    <!-- Marigold Flowers -->
+                    <g>
+                        <circle cx="110" cy="36" r="9" fill="#F59E0B" stroke="#FEF08A" stroke-width="1.5"/>
+                        <circle cx="170" cy="46" r="10" fill="#EA580C" stroke="#FEF08A" stroke-width="1.5"/>
+                        <circle cx="230" cy="46" r="10" fill="#F59E0B" stroke="#FEF08A" stroke-width="1.5"/>
+                        <circle cx="290" cy="36" r="9" fill="#EA580C" stroke="#FEF08A" stroke-width="1.5"/>
+                        <circle cx="400" cy="16" r="12" fill="#F59E0B" stroke="#FEF08A" stroke-width="2"/>
+                        <circle cx="510" cy="36" r="9" fill="#EA580C" stroke="#FEF08A" stroke-width="1.5"/>
+                        <circle cx="570" cy="46" r="10" fill="#F59E0B" stroke="#FEF08A" stroke-width="1.5"/>
+                        <circle cx="630" cy="46" r="10" fill="#EA580C" stroke="#FEF08A" stroke-width="1.5"/>
+                        <circle cx="690" cy="36" r="9" fill="#F59E0B" stroke="#FEF08A" stroke-width="1.5"/>
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Right Hanging Temple Bell -->
+            <div class="bell-swing animate-sway-delayed flex flex-col items-center mr-2 sm:mr-8">
+                <div class="w-0.5 h-8 sm:h-12 bg-gradient-to-b from-gold-300 to-gold-600"></div>
+                <svg class="w-10 h-12 sm:w-14 sm:h-16 text-gold-400 drop-shadow-[0_6px_10px_rgba(0,0,0,0.6)]" viewBox="0 0 64 72" fill="none">
+                    <circle cx="32" cy="6" r="4" stroke="currentColor" stroke-width="2.5"/>
+                    <path d="M32 10C20 10 16 22 15 36C14 46 8 52 8 52H56C56 52 50 46 49 36C48 22 44 10 32 10Z" fill="url(#bellGrad2)" stroke="#F5E0A3" stroke-width="1.5"/>
+                    <circle cx="32" cy="56" r="5" fill="#D4AF37"/>
+                    <defs>
+                        <linearGradient id="bellGrad2" x1="8" y1="10" x2="56" y2="52" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#F5E0A3"/>
+                            <stop offset="0.5" stop-color="#D4AF37"/>
+                            <stop offset="1" stop-color="#7D5C10"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================================================================== -->
+    <!-- 3. MAIN INVITATION CONTENT                                            -->
+    <!-- ===================================================================== -->
+    <main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+
+        <!-- HERO SECTION: COUPLE & INVITATION HEADER -->
+        <section class="relative text-center pt-4 pb-14 sm:py-16 flex flex-col items-center justify-center">
+            
+            <!-- Rotating Sacred Kolam / Mandala Watermark Behind Names -->
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+                <svg class="w-[340px] h-[340px] sm:w-[540px] sm:h-[540px] text-gold-500/15 animate-spin-slow" viewBox="0 0 400 400" fill="none">
+                    <circle cx="200" cy="200" r="190" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 6"/>
+                    <circle cx="200" cy="200" r="165" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="200" cy="200" r="130" stroke="currentColor" stroke-width="1" stroke-dasharray="3 5"/>
+                    <circle cx="200" cy="200" r="95" stroke="currentColor" stroke-width="1.5"/>
+                    <!-- 16-Petal Lotus Geometry -->
+                    <g stroke="currentColor" stroke-width="1.2">
+                        <polygon points="200,15 225,130 340,130 245,200 280,315 200,245 120,315 155,200 60,130 175,130"/>
+                        <polygon points="200,385 225,270 340,270 245,200 280,85 200,155 120,85 155,200 60,270 175,270"/>
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Auspicious Ganesha / Sacred Emblem -->
+            <div class="reveal-element mb-5 flex flex-col items-center">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-maroon-950/80 border border-gold-500/70 flex items-center justify-center shadow-[0_0_25px_rgba(212,175,55,0.3)] mb-3">
+                    <!-- Traditional South Indian Sacred Lamp (Kuthuvilakku) SVG -->
+                    <svg class="w-10 h-10 sm:w-12 sm:h-12 text-gold-400" viewBox="0 0 64 64" fill="none">
+                        <!-- Flame -->
+                        <path d="M32 6C32 6 37 13 37 17C37 19.8 34.8 22 32 22C29.2 22 27 19.8 27 17C27 13 32 6 32 6Z" fill="#FDE047"/>
+                        <!-- Lamp Bowl -->
+                        <path d="M18 26H46L41 33H23L18 26Z" fill="currentColor"/>
+                        <!-- Stem -->
+                        <rect x="30" y="33" width="4" height="17" fill="currentColor"/>
+                        <circle cx="32" cy="41" r="3.5" fill="#F5E0A3"/>
+                        <!-- Base -->
+                        <path d="M21 54H43L39 50H25L21 54Z" fill="currentColor"/>
+                        <rect x="18" y="54" width="28" height="3" rx="1.5" fill="#F5E0A3"/>
+                    </svg>
+                </div>
+                <span class="font-cinzel text-xs sm:text-sm tracking-[0.35em] text-gold-400 uppercase font-semibold">
+                    ॥ Sri Ganeshaya Namah ॥
+                </span>
+            </div>
+
+            <!-- Exact Invitation Header Text -->
+            <div class="reveal-element max-w-2xl mx-auto px-2 mb-8">
+                <h1 class="font-cinzel text-sm sm:text-base md:text-lg tracking-[0.22em] leading-relaxed text-ivory-100 uppercase font-semibold drop-shadow">
+                    WITH THE BLESSINGS OF THEIR FAMILIES,<br>
+                    <span class="text-gold-300">WE CORDIALLY INVITE YOU</span><br>
+                    TO CELEBRATE THEIR UNION
+                </h1>
+            </div>
+
+            <!-- Ornamental Divider -->
+            <div class="reveal-element flex items-center justify-center gap-3 w-full max-w-md mb-8">
+                <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-gold-400 to-gold-500"></div>
+                <svg class="w-6 h-6 text-gold-400" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L14.8 8.8L22 9.5L16.5 14.2L18.2 21.3L12 17.5L5.8 21.3L7.5 14.2L2 9.5L9.2 8.8L12 2Z"/>
+                </svg>
+                <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent via-gold-400 to-gold-500"></div>
+            </div>
+
+            <!-- Couple Names: Ramprasath weds Bharathi -->
+            <div class="reveal-element relative my-2 sm:my-4 px-4">
+                <h2 class="font-script text-6xl sm:text-7xl md:text-8xl lg:text-9xl gold-foil-text drop-shadow-[0_6px_18px_rgba(0,0,0,0.65)] py-2 leading-tight">
+                    Ramprasath
+                </h2>
+                
+                <div class="my-2 sm:my-3 flex items-center justify-center gap-4">
+                    <span class="h-[1px] w-12 sm:w-20 bg-gold-400/60"></span>
+                    <span class="font-cinzel italic text-xl sm:text-2xl md:text-3xl text-gold-300 tracking-[0.2em] lowercase bg-maroon-950/70 px-5 py-1 rounded-full border border-gold-500/40 shadow-inner">
+                        weds
+                    </span>
+                    <span class="h-[1px] w-12 sm:w-20 bg-gold-400/60"></span>
+                </div>
+
+                <h2 class="font-script text-6xl sm:text-7xl md:text-8xl lg:text-9xl gold-foil-text drop-shadow-[0_6px_18px_rgba(0,0,0,0.65)] py-2 leading-tight">
+                    Bharathi
+                </h2>
+            </div>
+
+            <!-- Quick Action Pill Buttons -->
+            <div class="reveal-element mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+                <button id="save-date-btn" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-gold-500 via-gold-400 to-gold-500 text-maroon-950 font-cinzel text-xs sm:text-sm font-bold tracking-widest uppercase shadow-[0_8px_25px_rgba(212,175,55,0.4)] hover:scale-105 active:scale-95 transition-all cursor-pointer">
+                    <i data-lucide="calendar-plus" class="w-4 h-4"></i>
+                    <span>Save the Date</span>
+                </button>
+                <a href="#venue-section" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-maroon-950/80 border border-gold-400 text-gold-300 font-cinzel text-xs sm:text-sm font-semibold tracking-widest uppercase hover:bg-gold-500/20 hover:scale-105 active:scale-95 transition-all">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-gold-400"></i>
+                    <span>View Venue</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- LIVE COUNTDOWN TIMER TO DECEMBER 13, 2026 7:35 AM IST             -->
+        <!-- ================================================================= -->
+        <section class="reveal-element my-8 sm:my-12">
+            <div class="bg-maroon-950/85 backdrop-blur-md gold-border-ornate rounded-3xl p-6 sm:p-8 text-center max-w-3xl mx-auto relative overflow-hidden">
+                <!-- Subtle Corner Flourishes -->
+                <div class="absolute top-2 left-2 w-6 h-6 border-t-2 border-l-2 border-gold-400/60 rounded-tl-lg"></div>
+                <div class="absolute top-2 right-2 w-6 h-6 border-t-2 border-r-2 border-gold-400/60 rounded-tr-lg"></div>
+                <div class="absolute bottom-2 left-2 w-6 h-6 border-b-2 border-l-2 border-gold-400/60 rounded-bl-lg"></div>
+                <div class="absolute bottom-2 right-2 w-6 h-6 border-b-2 border-r-2 border-gold-400/60 rounded-br-lg"></div>
+
+                <p class="font-cinzel text-xs sm:text-sm tracking-[0.28em] text-gold-400 uppercase mb-5">
+                    Counting Down to the Muhurtham
+                </p>
+
+                <div id="countdown-grid" class="grid grid-cols-4 gap-2 sm:gap-5 max-w-xl mx-auto">
+                    <div class="bg-gradient-to-b from-maroon-900 to-maroon-950 border border-gold-500/40 rounded-2xl p-3 sm:p-4 shadow-lg">
+                        <span id="cd-days" class="block font-cinzel text-2xl sm:text-4xl md:text-5xl font-bold text-gold-300">00</span>
+                        <span class="block font-serif text-xs sm:text-sm uppercase tracking-widest text-ivory-200/80 mt-1">Days</span>
+                    </div>
+                    <div class="bg-gradient-to-b from-maroon-900 to-maroon-950 border border-gold-500/40 rounded-2xl p-3 sm:p-4 shadow-lg">
+                        <span id="cd-hours" class="block font-cinzel text-2xl sm:text-4xl md:text-5xl font-bold text-gold-300">00</span>
+                        <span class="block font-serif text-xs sm:text-sm uppercase tracking-widest text-ivory-200/80 mt-1">Hours</span>
+                    </div>
+                    <div class="bg-gradient-to-b from-maroon-900 to-maroon-950 border border-gold-500/40 rounded-2xl p-3 sm:p-4 shadow-lg">
+                        <span id="cd-minutes" class="block font-cinzel text-2xl sm:text-4xl md:text-5xl font-bold text-gold-300">00</span>
+                        <span class="block font-serif text-xs sm:text-sm uppercase tracking-widest text-ivory-200/80 mt-1">Minutes</span>
+                    </div>
+                    <div class="bg-gradient-to-b from-maroon-900 to-maroon-950 border border-gold-500/40 rounded-2xl p-3 sm:p-4 shadow-lg">
+                        <span id="cd-seconds" class="block font-cinzel text-2xl sm:text-4xl md:text-5xl font-bold text-gold-400">00</span>
+                        <span class="block font-serif text-xs sm:text-sm uppercase tracking-widest text-ivory-200/80 mt-1">Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- CEREMONY EVENTS SECTION (BETROTHAL & WEDDING)                     -->
+        <!-- ================================================================= -->
+        <section class="my-14 sm:my-20">
+            <div class="reveal-element text-center mb-10 sm:mb-12">
+                <span class="font-cinzel text-xs tracking-[0.3em] text-gold-400 uppercase block mb-2">Auspicious Celebrations</span>
+                <h3 class="font-cinzel text-2xl sm:text-4xl font-bold text-ivory-50 tracking-wider">Wedding Ceremonies</h3>
+                <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mt-3"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
+                
+                <!-- EVENT 1: BETROTHAL CEREMONY -->
+                <div class="reveal-element tilt-card ivory-silk-card rounded-3xl p-7 sm:p-10 text-maroon-950 relative overflow-hidden group">
+                    <!-- Subtle Background Mandala inside Ivory Card -->
+                    <svg class="absolute -right-12 -bottom-12 w-48 h-48 text-gold-600/15 pointer-events-none group-hover:rotate-45 transition-transform duration-1000" viewBox="0 0 200 200" fill="none">
+                        <circle cx="100" cy="100" r="85" stroke="currentColor" stroke-width="2" stroke-dasharray="5 5"/>
+                        <circle cx="100" cy="100" r="60" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="100" cy="100" r="35" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+
+                    <!-- Emerald & Gold Top Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-900 text-gold-300 font-cinzel text-xs tracking-[0.2em] uppercase mb-5 shadow">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-gold-400"></i>
+                        <span>Evening Muhurtham</span>
+                    </div>
+
+                    <h4 class="font-cinzel text-2xl sm:text-3xl font-extrabold text-maroon-900 tracking-wide mb-4">
+                        BETROTHAL CEREMONY
+                    </h4>
+
+                    <div class="h-[1.5px] w-20 bg-gold-600 mb-6"></div>
+
+                    <div class="space-y-4 font-serif text-lg sm:text-xl">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-full bg-maroon-900/10 border border-gold-600/50 flex items-center justify-center shrink-0 text-maroon-900">
+                                <i data-lucide="calendar" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-cinzel uppercase tracking-widest text-maroon-800/70">Date</p>
+                                <p class="font-bold text-maroon-950 text-xl sm:text-2xl">December 12, 2026</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-full bg-maroon-900/10 border border-gold-600/50 flex items-center justify-center shrink-0 text-maroon-900">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-cinzel uppercase tracking-widest text-maroon-800/70">Auspicious Time</p>
+                                <p class="font-bold text-maroon-950 text-xl sm:text-2xl">6:30 pm – 7:29 pm</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="mt-6 pt-4 border-t border-gold-600/30 italic text-maroon-800 text-base sm:text-lg">
+                        Join us for the sacred Nichayathartham &amp; evening reception festivities.
+                    </p>
+                </div>
+
+                <!-- EVENT 2: WEDDING CEREMONY -->
+                <div class="reveal-element tilt-card ivory-silk-card rounded-3xl p-7 sm:p-10 text-maroon-950 relative overflow-hidden group">
+                    <!-- Subtle Background Mandala inside Ivory Card -->
+                    <svg class="absolute -right-12 -bottom-12 w-48 h-48 text-gold-600/15 pointer-events-none group-hover:rotate-45 transition-transform duration-1000" viewBox="0 0 200 200" fill="none">
+                        <circle cx="100" cy="100" r="85" stroke="currentColor" stroke-width="2" stroke-dasharray="5 5"/>
+                        <circle cx="100" cy="100" r="60" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="100" cy="100" r="35" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+
+                    <!-- Maroon & Gold Top Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-maroon-900 text-gold-300 font-cinzel text-xs tracking-[0.2em] uppercase mb-5 shadow">
+                        <i data-lucide="sun" class="w-3.5 h-3.5 text-gold-400"></i>
+                        <span>Morning Muhurtham</span>
+                    </div>
+
+                    <h4 class="font-cinzel text-2xl sm:text-3xl font-extrabold text-maroon-900 tracking-wide mb-4">
+                        WEDDING CEREMONY
+                    </h4>
+
+                    <div class="h-[1.5px] w-20 bg-gold-600 mb-6"></div>
+
+                    <div class="space-y-4 font-serif text-lg sm:text-xl">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-full bg-maroon-900/10 border border-gold-600/50 flex items-center justify-center shrink-0 text-maroon-900">
+                                <i data-lucide="calendar" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-cinzel uppercase tracking-widest text-maroon-800/70">Date</p>
+                                <p class="font-bold text-maroon-950 text-xl sm:text-2xl">December 13, 2026</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-10 h-10 rounded-full bg-maroon-900/10 border border-gold-600/50 flex items-center justify-center shrink-0 text-maroon-900">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-cinzel uppercase tracking-widest text-maroon-800/70">Auspicious Time</p>
+                                <p class="font-bold text-maroon-950 text-xl sm:text-2xl">7:35 am – 9:00 am</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="mt-6 pt-4 border-t border-gold-600/30 italic text-maroon-800 text-base sm:text-lg">
+                        Followed by traditional South Indian wedding feast (Virundhu).
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- VENUE SECTION: GV MAHAL, VILATHIKULAM                             -->
+        <!-- ================================================================= -->
+        <section id="venue-section" class="reveal-element my-14 sm:my-20">
+            <div class="bg-gradient-to-br from-emerald-900/90 via-maroon-950/95 to-maroon-900/90 backdrop-blur-md gold-border-ornate rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl">
+                
+                <!-- Decorative Temple Pillar Arch Accent -->
+                <div class="max-w-2xl mx-auto relative z-10">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-gold-500/20 border border-gold-400 flex items-center justify-center text-gold-300 animate-float">
+                        <i data-lucide="map-pin" class="w-7 h-7"></i>
+                    </div>
+
+                    <p class="font-cinzel text-xs sm:text-sm tracking-[0.3em] text-gold-400 uppercase mb-2">
+                        Celebration Venue
+                    </p>
+
+                    <h3 class="font-cinzel text-3xl sm:text-4xl md:text-5xl font-extrabold text-ivory-50 tracking-wider mb-3">
+                        GV MAHAL
+                    </h3>
+                    <p class="font-cinzel text-lg sm:text-xl text-gold-300 tracking-[0.25em] uppercase mb-6">
+                        VILATHIKULAM
+                    </p>
+
+                    <p class="font-serif text-lg sm:text-xl text-ivory-200/90 max-w-lg mx-auto mb-8 leading-relaxed">
+                        We look forward to welcoming you and your family at GV Mahal, Vilathikulam to share in our joy and celebration.
+                    </p>
+
+                    <!-- Interactive Google Maps & Copy Venue Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="https://www.google.com/maps/search/?api=1&query=GV+Mahal+Vilathikulam" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-gold-500 via-gold-400 to-gold-500 text-maroon-950 font-cinzel text-xs sm:text-sm font-bold tracking-[0.18em] uppercase shadow-[0_10px_30px_rgba(212,175,55,0.45)] hover:scale-105 active:scale-95 transition-all">
+                            <i data-lucide="navigation" class="w-4 h-4"></i>
+                            <span>Open Google Maps</span>
+                        </a>
+
+                        <button id="copy-venue-btn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-maroon-950/80 border border-gold-400/70 text-gold-300 font-cinzel text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase hover:bg-gold-500/15 transition-all cursor-pointer">
+                            <i data-lucide="copy" class="w-4 h-4"></i>
+                            <span>Copy Venue Address</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- BLESSINGS FOOTER & ILLUSTRATOR CREDIT                             -->
+        <!-- ================================================================= -->
+        <footer class="reveal-element text-center pt-8 pb-12 border-t border-gold-500/30">
+            <!-- Decorative Lotus -->
+            <svg class="w-12 h-12 text-gold-400 mx-auto mb-4 opacity-90" viewBox="0 0 64 64" fill="none">
+                <path d="M32 10C32 10 40 22 40 32C40 38 36 42 32 42C28 42 24 38 24 32C24 22 32 10 32 10Z" fill="currentColor" fill-opacity="0.85"/>
+                <path d="M32 42C32 42 46 38 52 28C52 28 52 42 40 48C35 50 32 42 32 42Z" fill="currentColor" fill-opacity="0.6"/>
+                <path d="M32 42C32 42 18 38 12 28C12 28 12 42 24 48C29 50 32 42 32 42Z" fill="currentColor" fill-opacity="0.6"/>
+                <path d="M14 52C22 56 42 56 50 52" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+
+            <p class="font-serif italic text-2xl sm:text-3xl md:text-4xl text-gold-200 max-w-2xl mx-auto leading-relaxed mb-6 px-2">
+                "Your presence and blessings will make these moments complete !"
+            </p>
+
+            <div class="flex items-center justify-center gap-3 w-48 mx-auto mb-6">
+                <div class="h-[1px] flex-1 bg-gold-500/50"></div>
+                <div class="w-2 h-2 rotate-45 bg-gold-400"></div>
+                <div class="h-[1px] flex-1 bg-gold-500/50"></div>
+            </div>
+
+            <p class="font-cinzel text-xs sm:text-sm tracking-[0.22em] text-ivory-200/80 uppercase">
+                With Warm Regards from Both Families
+            </p>
+
+            <div class="mt-8 inline-block px-5 py-2 rounded-full bg-maroon-950/70 border border-gold-500/30">
+                <p class="font-serif italic text-sm sm:text-base text-gold-300/90">
+                    Illustrated by <span class="font-semibold not-italic font-cinzel text-xs tracking-wider text-gold-200">Shanmathi Krishnamoorthi</span>
+                </p>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- ===================================================================== -->
+    <!-- FLOATING INTERACTIVE "SHOWER BLESSINGS" BUTTON & TOAST NOTIFICATION   -->
+    <!-- ===================================================================== -->
+    <div class="fixed bottom-5 right-5 z-30 flex flex-col items-end gap-2">
+        <!-- Blessing Counter Pill -->
+        <div id="blessing-badge" class="bg-maroon-950/90 border border-gold-400/70 text-gold-200 font-cinzel text-[11px] tracking-widest uppercase px-3.5 py-1 rounded-full shadow-lg backdrop-blur-md">
+            Blessings: <span id="blessing-count" class="font-bold text-gold-400">108</span>
+        </div>
+
+        <button id="shower-blessings-btn" class="group flex items-center gap-2.5 px-5 py-3.5 rounded-full bg-gradient-to-r from-maroon-900 via-maroon-800 to-maroon-900 border-2 border-gold-400 text-gold-300 font-cinzel text-xs sm:text-sm font-bold tracking-wider uppercase shadow-[0_10px_30px_rgba(0,0,0,0.65)] hover:scale-105 active:scale-95 transition-all cursor-pointer">
+            <span class="text-lg group-hover:scale-125 transition-transform">🌸</span>
+            <span>Shower Blessings</span>
+        </button>
+    </div>
+
+    <!-- Custom Non-Blocking Toast Notification (Replaces alert()) -->
+    <div id="toast-notification" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 translate-y-4 transition-all duration-300">
+        <div class="bg-maroon-950/95 border border-gold-400 text-ivory-50 px-6 py-3 rounded-full shadow-2xl flex items-center gap-2.5 font-serif text-base sm:text-lg whitespace-nowrap">
+            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-400 shrink-0"></i>
+            <span id="toast-message">Action completed!</span>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- JAVASCRIPT: ANIMATIONS, PARTICLE ENGINE, COUNTDOWN & INTERACTIVITY    -->
+    <!-- ===================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide Icons
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+
+            // -----------------------------------------------------------------
+            // 1. HTML5 CANVAS PARTICLE SYSTEM (Jasmine, Marigold & Gold Sparkles)
+            // -----------------------------------------------------------------
+            const canvas = document.getElementById('petals-canvas');
+            const ctx = canvas.getContext('2d');
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            });
+
+            const particles = [];
+            const petalTypes = ['marigold', 'jasmine', 'rose', 'sparkle'];
+
+            class Particle {
+                constructor(x, y, isBurst = false) {
+                    this.x = x ?? Math.random() * width;
+                    this.y = y ?? Math.random() * height - height;
+                    this.type = petalTypes[Math.floor(Math.random() * petalTypes.length)];
+                    this.size = this.type === 'sparkle' ? (Math.random() * 2.5 + 1.5) : (Math.random() * 7 + 5);
+                    this.rotation = Math.random() * Math.PI * 2;
+                    this.rotationSpeed = (Math.random() - 0.5) * 0.05;
+                    this.swayAmplitude = Math.random() * 1.5 + 0.5;
+                    this.swayOffset = Math.random() * Math.PI * 2;
+                    this.isBurst = isBurst;
+
+                    if (isBurst) {
+                        const angle = Math.random() * Math.PI * 2;
+                        const speed = Math.random() * 9 + 3;
+                        this.vx = Math.cos(angle) * speed;
+                        this.vy = Math.sin(angle) * speed - 3;
+                        this.gravity = 0.16;
+                        this.life = 1.0;
+                        this.decay = Math.random() * 0.012 + 0.008;
+                    } else {
+                        this.vx = (Math.random() - 0.5) * 0.6;
+                        this.vy = Math.random() * 1.2 + 0.6;
+                        this.gravity = 0;
+                        this.life = 1.0;
+                        this.decay = 0;
+                    }
+                }
+
+                update() {
+                    if (this.isBurst) {
+                        this.vy += this.gravity;
+                        this.vx *= 0.98;
+                        this.x += this.vx;
+                        this.y += this.vy;
+                        this.life -= this.decay;
+                    } else {
+                        this.swayOffset += 0.02;
+                        this.x += this.vx + Math.sin(this.swayOffset) * this.swayAmplitude * 0.4;
+                        this.y += this.vy;
+                    }
+                    this.rotation += this.rotationSpeed;
+
+                    // Recycle ambient particles when they fall off-screen
+                    if (!this.isBurst && this.y > height + 20) {
+                        this.y = -20;
+                        this.x = Math.random() * width;
+                    }
+                }
+
+                draw() {
+                    ctx.save();
+                    ctx.globalAlpha = Math.max(0, this.life * 0.88);
+                    ctx.translate(this.x, this.y);
+                    ctx.rotate(this.rotation);
+
+                    if (this.type === 'marigold') {
+                        // Vibrant Saffron/Gold Marigold Petal
+                        ctx.fillStyle = Math.random() > 0.5 ? '#F59E0B' : '#EA580C';
+                        ctx.beginPath();
+                        ctx.ellipse(0, 0, this.size, this.size * 0.65, 0, 0, Math.PI * 2);
+                        ctx.fill();
+                    } else if (this.type === 'jasmine') {
+                        // Fragrant Ivory-White Jasmine Flower Bud/Petal
+                        ctx.fillStyle = '#FFFDF7';
+                        ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
+                        ctx.shadowBlur = 4;
+                        ctx.beginPath();
+                        ctx.moveTo(0, -this.size);
+                        ctx.quadraticCurveTo(this.size * 0.6, 0, 0, this.size);
+                        ctx.quadraticCurveTo(-this.size * 0.6, 0, 0, -this.size);
+                        ctx.fill();
+                    } else if (this.type === 'rose') {
+                        // Deep Crimson Rose Petal
+                        ctx.fillStyle = '#BE123C';
+                        ctx.beginPath();
+                        ctx.moveTo(0, -this.size * 0.8);
+                        ctx.bezierCurveTo(this.size, -this.size, this.size, this.size, 0, this.size * 0.8);
+                        ctx.bezierCurveTo(-this.size, this.size, -this.size, -this.size, 0, -this.size * 0.8);
+                        ctx.fill();
+                    } else {
+                        // Golden Temple Sparkle
+                        ctx.fillStyle = '#FDE047';
+                        ctx.shadowColor = '#D4AF37';
+                        ctx.shadowBlur = 8;
+                        ctx.beginPath();
+                        ctx.arc(0, 0, this.size, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+
+                    ctx.restore();
+                }
+            }
+
+            // Initialize gentle ambient petals
+            const ambientCount = window.innerWidth < 640 ? 28 : 48;
+            for (let i = 0; i < ambientCount; i++) {
+                particles.push(new Particle(Math.random() * width, Math.random() * height, false));
+            }
+
+            // Helper to spawn a celebratory burst of petals
+            function triggerPetalBurst(originX, originY, count = 55) {
+                for (let i = 0; i < count; i++) {
+                    particles.push(new Particle(originX, originY, true));
+                }
+            }
+
+            function animateParticles() {
+                ctx.clearRect(0, 0, width, height);
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    const p = particles[i];
+                    p.update();
+                    p.draw();
+                    if (p.isBurst && p.life <= 0) {
+                        particles.splice(i, 1);
+                    }
+                }
+                requestAnimationFrame(animateParticles);
+            }
+            animateParticles();
+
+            // -----------------------------------------------------------------
+            // 2. TEMPLE DOORS OPENING INTERACTION
+            // -----------------------------------------------------------------
+            const doorsOverlay = document.getElementById('temple-doors-overlay');
+            const openBtn = document.getElementById('open-invite-btn');
+
+            function openTempleDoors() {
+                doorsOverlay.classList.add('doors-open');
+                // Burst petals from the center of the screen
+                triggerPetalBurst(width / 2, height / 2, 85);
+
+                setTimeout(() => {
+                    doorsOverlay.style.opacity = '0';
+                    doorsOverlay.style.visibility = 'hidden';
+                    // Trigger scroll observer check immediately for hero elements
+                    document.querySelectorAll('.reveal-element').forEach((el, idx) => {
+                        if (idx < 5) el.classList.add('is-visible');
+                    });
+                }, 1150);
+            }
+
+            openBtn.addEventListener('click', openTempleDoors);
+
+            // -----------------------------------------------------------------
+            // 3. LIVE COUNTDOWN TIMER TO DEC 13, 2026 AT 7:35 AM IST (+05:30)
+            // -----------------------------------------------------------------
+            const weddingDate = new Date('2026-12-13T07:35:00+05:30').getTime();
+            const daysEl = document.getElementById('cd-days');
+            const hoursEl = document.getElementById('cd-hours');
+            const minsEl = document.getElementById('cd-minutes');
+            const secsEl = document.getElementById('cd-seconds');
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = weddingDate - now;
+
+                if (distance <= 0) {
+                    daysEl.textContent = '00';
+                    hoursEl.textContent = '00';
+                    minsEl.textContent = '00';
+                    secsEl.textContent = '00';
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                daysEl.textContent = String(days).padStart(2, '0');
+                hoursEl.textContent = String(hours).padStart(2, '0');
+                minsEl.textContent = String(minutes).padStart(2, '0');
+                secsEl.textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            // -----------------------------------------------------------------
+            // 4. SCROLL-TRIGGERED ENTRANCE ANIMATIONS (IntersectionObserver)
+            // -----------------------------------------------------------------
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('.reveal-element').forEach(el => {
+                revealObserver.observe(el);
+            });
+
+            // -----------------------------------------------------------------
+            // 5. 3D CARD TILT EFFECT ON DESKTOP HOVER & TOUCH
+            // -----------------------------------------------------------------
+            document.querySelectorAll('.tilt-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = ((y - centerY) / centerY) * -5;
+                    const rotateY = ((x - centerX) / centerX) * 5;
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+                });
+            });
+
+            // -----------------------------------------------------------------
+            // 6. TOAST HELPER, BLESSINGS SHOWER, SAVE THE DATE (.ICS) & COPY
+            // -----------------------------------------------------------------
+            const toastEl = document.getElementById('toast-notification');
+            const toastMsgEl = document.getElementById('toast-message');
+            let toastTimeout;
+
+            function showToast(message) {
+                toastMsgEl.textContent = message;
+                toastEl.classList.remove('opacity-0', 'translate-y-4');
+                toastEl.classList.add('opacity-100', 'translate-y-0');
+                clearTimeout(toastTimeout);
+                toastTimeout = setTimeout(() => {
+                    toastEl.classList.remove('opacity-100', 'translate-y-0');
+                    toastEl.classList.add('opacity-0', 'translate-y-4');
+                }, 3200);
+            }
+
+            // Shower Blessings Button
+            const blessingBtn = document.getElementById('shower-blessings-btn');
+            const blessingCountEl = document.getElementById('blessing-count');
+            let blessings = 108;
+
+            blessingBtn.addEventListener('click', (e) => {
+                blessings++;
+                blessingCountEl.textContent = blessings;
+                const rect = blessingBtn.getBoundingClientRect();
+                triggerPetalBurst(rect.left + rect.width / 2, rect.top, 60);
+                triggerPetalBurst(width * 0.5, height * 0.35, 45);
+                showToast('Thank you for showering your warm blessings! 🌸');
+            });
+
+            // Save the Date (.ics Calendar File Generator)
+            const saveDateBtn = document.getElementById('save-date-btn');
+            saveDateBtn.addEventListener('click', () => {
+                const icsContent = [
+                    'BEGIN:VCALENDAR',
+                    'VERSION:2.0',
+                    'PRODID:-//Ramprasath weds Bharathi//Wedding Invitation//EN',
+                    'BEGIN:VEVENT',
+                    'SUMMARY:Ramprasath weds Bharathi - Betrothal Ceremony',
+                    'DTSTART:20261212T130000Z',
+                    'DTEND:20261212T135900Z',
+                    'LOCATION:GV Mahal, Vilathikulam',
+                    'DESCRIPTION:Betrothal Ceremony of Ramprasath & Bharathi (6:30 PM - 7:29 PM IST) at GV Mahal, Vilathikulam.',
+                    'END:VEVENT',
+                    'BEGIN:VEVENT',
+                    'SUMMARY:Ramprasath weds Bharathi - Wedding Ceremony',
+                    'DTSTART:20261213T020500Z',
+                    'DTEND:20261213T033000Z',
+                    'LOCATION:GV Mahal, Vilathikulam',
+                    'DESCRIPTION:Wedding Ceremony of Ramprasath & Bharathi (7:35 AM - 9:00 AM IST) at GV Mahal, Vilathikulam.',
+                    'END:VEVENT',
+                    'END:VCALENDAR'
+                ].join('\r\n');
+
+                const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', 'Ramprasath-weds-Bharathi.ics');
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+
+                showToast('Wedding dates saved to your calendar!');
+            });
+
+            // Copy Venue Address using execCommand fallback for iFrame safety
+            const copyVenueBtn = document.getElementById('copy-venue-btn');
+            copyVenueBtn.addEventListener('click', () => {
+                const venueText = 'GV Mahal, Vilathikulam';
+                const tempInput = document.createElement('textarea');
+                tempInput.value = venueText;
+                tempInput.style.position = 'fixed';
+                tempInput.style.opacity = '0';
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                try {
+                    document.execCommand('copy');
+                    showToast('Venue copied: GV Mahal, Vilathikulam');
+                } catch (err) {
+                    showToast('Venue: GV Mahal, Vilathikulam');
+                }
+                document.body.removeChild(tempInput);
+            });
+        });
+    </script>
+</body>
+</html>
